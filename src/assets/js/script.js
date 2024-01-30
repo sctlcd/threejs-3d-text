@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
@@ -18,9 +19,21 @@ scene.add(mesh)
  * Sizes
  */
 const sizes = {
-    width: 800,
-    height: 600
+  width: window.innerWidth,
+  height: window.innerHeight
 };
+
+/**
+ * Fronts
+ */
+const fontLoader = new FontLoader();
+fontLoader.load(
+  '/fonts/helvetiker_regular.typeface.json',
+  () => {
+    console.log('font loaded');
+  }
+);
+
 
 /**
  * Camera
@@ -33,7 +46,7 @@ scene.add(camera);
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+  canvas: canvas
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.render(scene, camera);
