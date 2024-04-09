@@ -57,24 +57,24 @@ fontLoader.load(
         const text = new THREE.Mesh(textGeometry, textMaterial);
         scene.add(text);
 
-        // // Donuts
-        // const donutMaterial = new THREE.MeshBasicMaterial({wireframe: true});
+        // Donuts
+        const donutMaterial = new THREE.MeshBasicMaterial({wireframe: true});
         
-        // const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12);
+        const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12);
 
-        // for(let i = 0; i < 150; i++)
-        // {
-        //     const donut = new THREE.Mesh(donutGeometry, donutMaterial);
-        //     donut.position.x = (Math.random() - 0.5) * 10;
-        //     donut.position.y = (Math.random() - 0.5) * 10;
-        //     donut.position.z = (Math.random() - 0.5) * 10;
-        //     donut.rotation.x = Math.random() * Math.PI;
-        //     donut.rotation.y = Math.random() * Math.PI;
-        //     const scale = Math.random();
-        //     donut.scale.set(scale, scale, scale);
+        for(let i = 0; i < 200; i++)
+        {
+            const donut = new THREE.Mesh(donutGeometry, donutMaterial);
+            donut.position.x = (Math.random() - 0.5) * 10;
+            donut.position.y = (Math.random() - 0.5) * 10;
+            donut.position.z = (Math.random() - 0.5) * 10;
+            donut.rotation.x = Math.random() * Math.PI;
+            donut.rotation.y = Math.random() * Math.PI;
+            const scale = Math.random();
+            donut.scale.set(scale, scale, scale);
 
-        //     scene.add(donut);
-        // }
+            scene.add(donut);
+        }
     }
 );
 
