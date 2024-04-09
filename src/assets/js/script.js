@@ -21,8 +21,10 @@ const scene = new THREE.Scene();
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load('textures/matcaps/8.png');
-matcapTexture.colorSpace = THREE.SRGBColorSpace;
+const matcap8Texture = textureLoader.load('textures/matcaps/8.png');
+matcap8Texture.colorSpace = THREE.SRGBColorSpace;
+const matcap3Texture = textureLoader.load('textures/matcaps/3.png');
+matcap8Texture.colorSpace = THREE.SRGBColorSpace;
 
 /**
  * Fonts
@@ -34,7 +36,7 @@ fontLoader.load(
     (fontHelvetikerRegular) =>
     {
         // Material
-        const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+        const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcap8Texture });
         // const textMaterial = new THREE.MeshBasicMaterial({wireframe: true});
 
         // Text
@@ -58,6 +60,7 @@ fontLoader.load(
         scene.add(text);
 
         // Donuts
+        // const donutMaterial = new THREE.MeshMatcapMaterial({ matcap: matcap3Texture });
         const donutMaterial = new THREE.MeshBasicMaterial({wireframe: true});
         
         const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12);
