@@ -54,7 +54,7 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
 
     const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12);
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 60; i++) {
         const donut = new THREE.Mesh(donutGeometry, donutMaterial);
         donut.position.x = (Math.random() - 0.5) * 10;
         donut.position.y = (Math.random() - 0.5) * 10;
@@ -72,9 +72,9 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
     // Customed TorusGeometry
     const torusMaterial = new THREE.MeshBasicMaterial({wireframe: true});
 
-    const TorusGeometry = new THREE.TorusGeometry( .2, .8, 4, 28, 6.283 ); 
+    const TorusGeometry = new THREE.TorusGeometry( .1, .4, 6, 28, 6.283 ); 
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 60; i++) {
       const torus = new THREE.Mesh(TorusGeometry, torusMaterial);
       torus.position.x = (Math.random() - 0.5) * 10;
       torus.position.y = (Math.random() - 0.5) * 10;
@@ -85,8 +85,7 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
       torus
           .scale
           .set(scale, scale, scale);
-
-
+          
       scene.add( torus );
     }
 
