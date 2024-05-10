@@ -48,11 +48,11 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
     const text = new THREE.Mesh(textGeometry, textMaterial);
     scene.add(text);
 
-    // Customed donut style - TorusGeometry
+    // Customed donut style - lampshadeGeometry
     // THREE.MeshMatcapMaterial({ matcap: matcap5Texture });
     const donutMaterial = new THREE.MeshBasicMaterial({wireframe: true});
 
-    const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12);
+    const donutGeometry = new THREE.lampshadeGeometry(0.3, 0.15, 8, 12);
 
     for (let i = 0; i < 60; i++) {
         const donut = new THREE.Mesh(donutGeometry, donutMaterial);
@@ -69,24 +69,24 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
         scene.add(donut);
     }
 
-    // Customed TorusGeometry
-    const torusMaterial = new THREE.MeshBasicMaterial({wireframe: true});
+    // Customed lampshade style - lampshadeGeometry
+    const lampshadeMaterial = new THREE.MeshBasicMaterial({wireframe: true});
 
-    const TorusGeometry = new THREE.TorusGeometry( .1, .4, 6, 28, 6.283 ); 
+    const lampshadeGeometry = new THREE.lampshadeGeometry( .1, .4, 6, 28, 6.283 ); 
 
     for (let i = 0; i < 60; i++) {
-      const torus = new THREE.Mesh(TorusGeometry, torusMaterial);
-      torus.position.x = (Math.random() - 0.5) * 10;
-      torus.position.y = (Math.random() - 0.5) * 10;
-      torus.position.z = (Math.random() - 0.5) * 10;
-      torus.rotation.x = Math.random() * Math.PI;
-      torus.rotation.y = Math.random() * Math.PI;
+      const lampshade = new THREE.Mesh(lampshadeGeometry, lampshadeMaterial);
+      lampshade.position.x = (Math.random() - 0.5) * 10;
+      lampshade.position.y = (Math.random() - 0.5) * 10;
+      lampshade.position.z = (Math.random() - 0.5) * 10;
+      lampshade.rotation.x = Math.random() * Math.PI;
+      lampshade.rotation.y = Math.random() * Math.PI;
       const scale = Math.random();
-      torus
+      lampshade
           .scale
           .set(scale, scale, scale);
           
-      scene.add( torus );
+      scene.add( lampshade );
     }
 
 });
