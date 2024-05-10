@@ -59,7 +59,7 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
 
     const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12, 6.283);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
         const donut = new THREE.Mesh(donutGeometry, donutMaterial);
         donut.position.x = (Math.random() - 0.5) * 10;
         donut.position.y = (Math.random() - 0.5) * 10;
@@ -82,9 +82,9 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
       }
     );
 
-    const donut2Geometry = new THREE.TorusGeometry(0.3, 0.3, 8, 20, 6.283);
+    const donut2Geometry = new THREE.TorusGeometry(0.3, 0.3, 8, 15, 6.283);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
         const donut2 = new THREE.Mesh(donut2Geometry, donut2Material);
         donut2.position.x = (Math.random() - 0.5) * 10;
         donut2.position.y = (Math.random() - 0.5) * 10;
@@ -109,7 +109,7 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
 
     const lampshadeGeometry = new THREE.TorusGeometry( 0.1, 0.4, 6, 28, 6.283 ); 
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
       const lampshade = new THREE.Mesh(lampshadeGeometry, lampshadeMaterial);
       lampshade.position.x = (Math.random() - 0.5) * 10;
       lampshade.position.y = (Math.random() - 0.5) * 10;
@@ -128,13 +128,13 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
     const lampshade3Material = new THREE.MeshBasicMaterial(
       {
         wireframe: true, 
-        color: 0xdc_dc_dc
+        color: 0xbc_c2_c2
       }
     );
 
     const lampshade3Geometry = new THREE.TorusGeometry( 0.1, 0.4, 4, 12, 2 ); 
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
       const lampshade3 = new THREE.Mesh(lampshade3Geometry, lampshade3Material);
       lampshade3.position.x = (Math.random() - 0.5) * 10;
       lampshade3.position.y = (Math.random() - 0.5) * 10;
@@ -149,17 +149,42 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
       scene.add( lampshade3 );
     }
 
-    // Customed lampshade2 style - lampshadeGeometry
-    const lampshade2Material = new THREE.MeshBasicMaterial(
+    // Customed lampshade4 style - lampshadeGeometry
+    const lampshade4Material = new THREE.MeshBasicMaterial(
       {
         wireframe: true, 
         color: 0x98_97_a9
       }
     );
 
-    const lampshade2Geometry = new THREE.TorusGeometry( 0.1, 1, 3, 28, 6.283 ); 
+    const lampshade4Geometry = new THREE.TorusGeometry( 0.1, 1, 3, 28, 6.283 ); 
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
+      const lampshade4 = new THREE.Mesh(lampshade4Geometry, lampshade4Material);
+      lampshade4.position.x = (Math.random() - 0.5) * 10;
+      lampshade4.position.y = (Math.random() - 0.5) * 10;
+      lampshade4.position.z = (Math.random() - 0.5) * 10;
+      lampshade4.rotation.x = Math.random() * Math.PI;
+      lampshade4.rotation.y = Math.random() * Math.PI;
+      const scale = Math.random();
+      lampshade4
+          .scale
+          .set(scale, scale, scale);
+          
+      scene.add( lampshade4 );
+    }
+
+    // Customed lampshade2 style - lampshadeGeometry
+    const lampshade2Material = new THREE.MeshBasicMaterial(
+      {
+        wireframe: true, 
+        color: 0x7f_7d_9c
+      }
+    );
+
+    const lampshade2Geometry = new THREE.TorusGeometry( 0.1, 1, 3, 18, 2 ); 
+
+    for (let i = 0; i < 15; i++) {
       const lampshade2 = new THREE.Mesh(lampshade2Geometry, lampshade2Material);
       lampshade2.position.x = (Math.random() - 0.5) * 10;
       lampshade2.position.y = (Math.random() - 0.5) * 10;
