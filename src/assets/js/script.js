@@ -50,7 +50,12 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
 
     // Customed donut style - lampshadeGeometry
     // THREE.MeshMatcapMaterial({ matcap: matcap5Texture });
-    const donutMaterial = new THREE.MeshBasicMaterial({wireframe: true});
+    const donutMaterial = new THREE.MeshBasicMaterial(
+      {
+        wireframe: true, 
+        color: 0x69_68_80
+      }
+    );
 
     const donutGeometry = new THREE.TorusGeometry(0.3, 0.15, 8, 12, 6.283);
 
@@ -70,7 +75,12 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
     }
 
     // Customed donut style - lampshadeGeometry
-    const donut2Material = new THREE.MeshBasicMaterial({wireframe: true});
+    const donut2Material = new THREE.MeshBasicMaterial(
+      {
+        wireframe: true, 
+        color: 0xad_ad_c9
+      }
+    );
 
     const donut2Geometry = new THREE.TorusGeometry(0.3, 0.3, 8, 20, 6.283);
 
@@ -90,7 +100,12 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
     }
 
     // Customed lampshade style - lampshadeGeometry
-    const lampshadeMaterial = new THREE.MeshBasicMaterial({wireframe: true});
+    const lampshadeMaterial = new THREE.MeshBasicMaterial(
+      {
+        wireframe: true, 
+        color: 0xc5_c6_d0
+      }
+    );
 
     const lampshadeGeometry = new THREE.TorusGeometry( 0.1, 0.4, 6, 28, 6.283 ); 
 
@@ -109,8 +124,38 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
       scene.add( lampshade );
     }
 
+    // Customed lampshade3 style - lampshadeGeometry
+    const lampshade3Material = new THREE.MeshBasicMaterial(
+      {
+        wireframe: true, 
+        color: 0xdc_dc_dc
+      }
+    );
+
+    const lampshade3Geometry = new THREE.TorusGeometry( 0.1, 0.4, 4, 12, 2 ); 
+
+    for (let i = 0; i < 10; i++) {
+      const lampshade3 = new THREE.Mesh(lampshade3Geometry, lampshade3Material);
+      lampshade3.position.x = (Math.random() - 0.5) * 10;
+      lampshade3.position.y = (Math.random() - 0.5) * 10;
+      lampshade3.position.z = (Math.random() - 0.5) * 10;
+      lampshade3.rotation.x = Math.random() * Math.PI;
+      lampshade3.rotation.y = Math.random() * Math.PI;
+      const scale = Math.random();
+      lampshade3
+          .scale
+          .set(scale, scale, scale);
+          
+      scene.add( lampshade3 );
+    }
+
     // Customed lampshade2 style - lampshadeGeometry
-    const lampshade2Material = new THREE.MeshBasicMaterial({wireframe: true});
+    const lampshade2Material = new THREE.MeshBasicMaterial(
+      {
+        wireframe: true, 
+        color: 0x98_97_a9
+      }
+    );
 
     const lampshade2Geometry = new THREE.TorusGeometry( 0.1, 1, 3, 28, 6.283 ); 
 
