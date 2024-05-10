@@ -69,6 +69,26 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
         scene.add(donut);
     }
 
+    // Customed donut style - lampshadeGeometry
+    const donut2Material = new THREE.MeshBasicMaterial({wireframe: true});
+
+    const donut2Geometry = new THREE.TorusGeometry(0.3, 0.3, 8, 20, 6.283);
+
+    for (let i = 0; i < 10; i++) {
+        const donut2 = new THREE.Mesh(donut2Geometry, donut2Material);
+        donut2.position.x = (Math.random() - 0.5) * 10;
+        donut2.position.y = (Math.random() - 0.5) * 10;
+        donut2.position.z = (Math.random() - 0.5) * 10;
+        donut2.rotation.x = Math.random() * Math.PI;
+        donut2.rotation.y = Math.random() * Math.PI;
+        const scale = Math.random();
+        donut2
+            .scale
+            .set(scale, scale, scale);
+
+        scene.add(donut2);
+    }
+
     // Customed lampshade style - lampshadeGeometry
     const lampshadeMaterial = new THREE.MeshBasicMaterial({wireframe: true});
 
