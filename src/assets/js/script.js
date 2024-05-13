@@ -3,7 +3,9 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 // import GUI from 'lil-gui';
 import {FontLoader} from 'three/examples/jsm/loaders/FontLoader.js';
 import {TextGeometry} from 'three/examples/jsm/geometries/TextGeometry.js';
-import typefaceFont from 'three/examples/fonts/helvetiker_regular.typeface.json';
+// import typefaceFont from 'three/examples/fonts/helvetiker_regular.typeface.json';
+import {shapeArray} from './../../data/geometrydata.json';
+
 
 /**
  * Base
@@ -48,75 +50,18 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
 /**
  * Geometries
  */
-const shapeArray = [
-  {
-    "radius": 0.3,
-    "tube": 0.10,
-    "radialSegments": 8,
-    "tubularSegments": 12,
-    "arc": 6.283,
-    "wireframe": true,
-    "color": 0x69_68_80,
-  },
-  {
-    "radius": 0.3,
-    "tube": 0.3,
-    "radialSegments": 8,
-    "tubularSegments": 10,
-    "arc": 6.283,
-    "wireframe": true,
-    "color": 0xad_ad_c9,
-  },
-  {
-    "radius": 0.1,
-    "tube": 0.4,
-    "radialSegments": 6,
-    "tubularSegments": 28,
-    "arc": 6.283,
-    "wireframe": true,
-    "color": 0xc5_c6_d0,
-  },
-  {
-    "radius": 0.1,
-    "tube": 0.4,
-    "radialSegments": 4,
-    "tubularSegments": 12,
-    "arc": 2,
-    "wireframe": true,
-    "color": 0xbc_c2_c2,
-  },
-  {
-    "radius": 0.1,
-    "tube": 1,
-    "radialSegments": 3,
-    "tubularSegments": 28,
-    "arc": 6.283,
-    "wireframe": true,
-    "color": 0x98_97_a9,
-  },
-  {
-    "radius": 0.1,
-    "tube": 1,
-    "radialSegments": 3,
-    "tubularSegments": 18,
-    "arc": 2,
-    "wireframe": true,
-    "color": 0x7f_7d_9c,
-  },
-]
-
-for (let i = 0; i < 10; i++) {
-    for (let j = 0; j < shapeArray.length; j++) {
+for (let i = 0; i < shapeArray.length; i++) {
+    for (let j = 0; j < 20; j++) {
         const material = new THREE.MeshBasicMaterial({
-            "wireframe": shapeArray[j].wireframe,
-            "color": shapeArray[j].color
+            "wireframe": shapeArray[i].wireframe,
+            "color": shapeArray[i].color
         });
         const geometry = new THREE.TorusGeometry(
-          shapeArray[j].radius, 
-          shapeArray[j].tube, 
-          shapeArray[j].radialSegments, 
-          shapeArray[j].tubularSegments, 
-          shapeArray[j].arc
+          shapeArray[i].radius, 
+          shapeArray[i].tube, 
+          shapeArray[i].radialSegments, 
+          shapeArray[i].tubularSegments, 
+          shapeArray[i].arc
         );
         const mesh = new THREE.Mesh(geometry, material);
         
