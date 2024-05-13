@@ -1,0 +1,58 @@
+{
+  "shapeArray": [
+    {
+      "radius": 0.3,
+      "tube": 0.10,
+      "radialSegments": 8,
+      "tubularSegments": 12,
+      "arc": 6.283,
+      "wireframe": true,
+      "color": "#696880"
+    },
+    {
+      "radius": 0.3,
+      "tube": 0.3,
+      "radialSegments": 8,
+      "tubularSegments": 10,
+      "arc": 6.283,
+      "wireframe": true,
+      "color": "#adadc9"
+    },
+    {
+      "radius": 0.1,
+      "tube": 0.4,
+      "radialSegments": 6,
+      "tubularSegments": 28,
+      "arc": 6.283,
+      "wireframe": true,
+      "color": "#9c9c9c"
+    },
+    {
+      "radius": 0.1,
+      "tube": 0.4,
+      "radialSegments": 4,
+      "tubularSegments": 12,
+      "arc": 2,
+      "wireframe": true,
+      "color": "#a8afaf"
+    },
+    {
+      "radius": 0.1,
+      "tube": 1,
+      "radialSegments": 3,
+      "tubularSegments": 28,
+      "arc": 6.283,
+      "wireframe": true,
+      "color": "#9897a9"
+    },
+    {
+      "radius": 0.1,
+      "tube": 1,
+      "radialSegments": 3,
+      "tubularSegments": 18,
+      "arc": 2,
+      "wireframe": true,
+      "color": "#7f7d9c"
+    }
+  ]
+}
