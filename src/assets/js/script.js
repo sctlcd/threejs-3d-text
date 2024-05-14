@@ -3,7 +3,6 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 // import GUI from 'lil-gui';
 import {FontLoader} from 'three/examples/jsm/loaders/FontLoader.js';
 import {TextGeometry} from 'three/examples/jsm/geometries/TextGeometry.js';
-// import typefaceFont from 'three/examples/fonts/helvetiker_regular.typeface.json';
 import {shapeArray} from './../../data/geometrydata.json';
 
 
@@ -125,13 +124,10 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 /**
  * Animate
  */
-const clock = new THREE.Clock();
-
 const tick = () => {
-    const elapsedTime = clock.getElapsedTime();
 
     // Update controls
-    controls.update();
+    // controls.update();
 
     // Render
     renderer.render(scene, camera);
