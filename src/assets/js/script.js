@@ -4,12 +4,13 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import {FontLoader} from 'three/examples/jsm/loaders/FontLoader.js';
 import {TextGeometry} from 'three/examples/jsm/geometries/TextGeometry.js';
 import {shapeArray} from './../../data/geometrydata.json';
+import {gsap} from 'gsap';
 
 
 /**
  * Base
  */
-// Debug const gui = new GUI(); Canvas
+// const gui = new GUI();
 const canvas = document.querySelector('canvas.webgl');
 
 // Scene
@@ -44,6 +45,9 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json', (fontHelvetikerRegula
     const text = new THREE.Mesh(textGeometry, textMaterial);
     
     scene.add(text);
+
+    gsap.to(text.rotation, { x: 0.7, duration: 1, delay: 1});
+    gsap.to(text.rotation, { x: -0.1, duration: 1, delay: 2});
 });
 
 /**
@@ -56,25 +60,25 @@ for (let i = 0; i < shapeArray.length; i++) {
             "color": shapeArray[i].color
         });
         const geometry = new THREE.TorusGeometry(
-          shapeArray[i].radius, 
-          shapeArray[i].tube, 
-          shapeArray[i].radialSegments, 
-          shapeArray[i].tubularSegments, 
-          shapeArray[i].arc
+            shapeArray[i].radius, 
+            shapeArray[i].tube, 
+            shapeArray[i].radialSegments, 
+            shapeArray[i].tubularSegments, 
+            shapeArray[i].arc
         );
         const mesh = new THREE.Mesh(geometry, material);
         
         mesh.position.x = (Math.random() - 0.5) * 10;
         mesh.position.y = (Math.random() - 0.5) * 10;
         mesh.position.z = (Math.random() - 0.5) * 10;
-        mesh.rotation.x = Math.random() * Math.PI;
-        mesh.rotation.y = Math.random() * Math.PI;
         const scale = Math.random();
         mesh
             .scale
             .set(scale, scale, scale);
 
         scene.add(mesh);
+
+        gsap.to(mesh.rotation, { x: 6, duration: 5, delay: 3});
     }
 }
 
