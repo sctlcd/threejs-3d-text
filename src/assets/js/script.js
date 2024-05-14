@@ -71,8 +71,6 @@ for (let i = 0; i < shapeArray.length; i++) {
         mesh.position.x = (Math.random() - 0.5) * 10;
         mesh.position.y = (Math.random() - 0.5) * 10;
         mesh.position.z = (Math.random() - 0.5) * 10;
-        // mesh.rotation.x = Math.random() * Math.PI;
-        // mesh.rotation.y = Math.random() * Math.PI;
         const scale = Math.random();
         mesh
             .scale
