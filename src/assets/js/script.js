@@ -78,7 +78,7 @@ for (let i = 0; i < shapeArray.length; i++) {
 
         scene.add(mesh);
 
-        gsap.to(mesh.rotation, { x: 6, duration: 5, delay: 3});
+        gsap.to(mesh.rotation, { x: 3, y: 3, z: 3, duration: 5, delay: 3});
     }
 }
 
