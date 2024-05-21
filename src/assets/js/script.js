@@ -128,6 +128,9 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 /**
  * Animate
  */
+gsap.to(camera.position, { x: 3, y: 1, z: 1, duration: 1, delay: 8});
+gsap.to(camera.position, { x: 1, y: 1, z: 2, duration: 1, delay: 9});
+
 const tick = () => {
 
     // Update controls
